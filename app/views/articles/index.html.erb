@@ -1,11 +1,38 @@
+<style>
+.heading {
+  text-align: center;
+  background-color: rgb(115, 198, 182 );
+}
+.title{
+  width: 200px;
+  border: solid grey;
+  background-color: rgb(240, 243, 244);
+}
+.text{
+  width: 900px;
+  border: solid grey;
+  background-color: rgb(240, 243, 244);
+}
+.veiw{
+  padding: 0.2em;
+  border: solid grey;
+  backgroung-color: rgb(236, 240, 241);
+}
+.border{
+  border: solid rgb(149, 165, 166); 
+  background-color: rgb(213, 245, 227);
+}
+</style>
+<h1 class="heading">Listing all articles</h1>
 
-<h1>Listing articles</h1>
- 
+<div> 
 <%= link_to 'New article', new_article_path %>
-<table>
+</div>
+
+<table class="border">
   <tr>
-    <th>Title</th>
-    <th>Text</th>
+    <th class="title">Title</th>
+    <th class="text">Text</th>
     <th></th>
   </tr>
  
@@ -13,9 +40,9 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-       <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
+      <td class="veiw"><%= link_to 'Show', article_path(article) %></td>
+       <td class="veiw"><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td class="veiw"><%= link_to 'Destroy', article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
